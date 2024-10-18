@@ -1,5 +1,5 @@
-package cw.types;
+package cw;
 
-public class Building {
+public class Spell extends Card{
 
 }
