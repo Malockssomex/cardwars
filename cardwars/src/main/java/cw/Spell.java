@@ -1,5 +1,5 @@
 package cw;
 
-public class Spell extends Card{
+// public class Spell extends Card{
 
-}
+// }

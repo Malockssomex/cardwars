@@ -1,5 +1,6 @@
 package cw;
 
+import java.util.Random;
 import java.util.ArrayList;
 
 public class Player {
@@ -29,7 +30,26 @@ public class Player {
         return yard;
     }
 
-    public void shuffleDeck() {
-        
+    public void shuffleDeck(Random rng) {
+        int size = deck.size();
+        for (int i=0; i<size; i++) {
+            deck.add(rng.nextInt(size) ,deck.remove(i));
+        }
+    }
+
+    /**
+     * Draws a card from the deck into the hand
+     */
+    public void draw() {
+        hand.add(deck.remove(deck.size() - 1));
+    }
+
+    /**
+     * Draws n cards from the deck into the hand
+     * @param n - number of cards to draw
+     */
+    public void draw(int n) {
+        for (int i=0; i<n; i++)
+            draw();
     }
 }

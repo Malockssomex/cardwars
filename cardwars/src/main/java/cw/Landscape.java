@@ -32,6 +32,4 @@ public class Landscape {
     public Creature getCreature() {
         return creature;
     }
-
-    
 }

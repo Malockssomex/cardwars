@@ -1,5 +1,5 @@
 package cw;
 
-public class Building extends Card{
+// public class Building extends Card{
 
-}
+// }
