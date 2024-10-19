@@ -18,7 +18,10 @@ public class Landscape {
     }
 
     public LandscapeType getType() {
-        return type;
+        if (faceUp)
+            return type;
+        else
+            return LandscapeType.RAINBOW;
     }
 
     public boolean isFaceUp() {

@@ -27,5 +27,7 @@ public class Creature extends Card{
         return dmg;
     }
 
-    
+    public void trigger() {
+        
+    }
 }

@@ -1,9 +1,9 @@
 package cw;
 
-import cw.types.CardType;
-import cw.types.LandscapeType;
+import cw.types.*;
 
 public abstract class Card {
+    private CardName id;
     private int manaCost;
     private String name;
     private LandscapeType color;
