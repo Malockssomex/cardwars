@@ -1,15 +1,16 @@
 package cw;
 
 import java.util.Random;
+import cw.types.CardName;
 import java.util.ArrayList;
 
 public class Player {
     private int health;
-    ArrayList<Card> deck = new ArrayList<Card>();
-    ArrayList<Card> hand = new ArrayList<Card>();
-    ArrayList<Card> yard = new ArrayList<Card>();
+    ArrayList<CardName> deck = new ArrayList<CardName>();
+    ArrayList<CardName> hand = new ArrayList<CardName>();
+    ArrayList<CardName> yard = new ArrayList<CardName>();
     
-    public Player(ArrayList<Card> deck) {
+    public Player(ArrayList<CardName> deck) {
         health = 25;
         this.deck = deck;
     }
@@ -18,15 +19,15 @@ public class Player {
         return health;
     }
 
-    public ArrayList<Card> getDeck() {
+    public ArrayList<CardName> getDeck() {
         return deck;
     }
 
-    public ArrayList<Card> getHand() {
+    public ArrayList<CardName> getHand() {
         return hand;
     }
 
-    public ArrayList<Card> getYard() {
+    public ArrayList<CardName> getYard() {
         return yard;
     }
 
@@ -38,15 +39,15 @@ public class Player {
     }
 
     /**
-     * Draws a card from the deck into the hand
+     * Draws a CardName from the deck into the hand
      */
     public void draw() {
         hand.add(deck.remove(deck.size() - 1));
     }
 
     /**
-     * Draws n cards from the deck into the hand
-     * @param n - number of cards to draw
+     * Draws n CardNames from the deck into the hand
+     * @param n - number of CardNames to draw
      */
     public void draw(int n) {
         for (int i=0; i<n; i++)
