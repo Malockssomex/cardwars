@@ -17,7 +17,7 @@ public class Landscape {
 
     }
 
-    public LandscapeType getType() {
+    public LandscapeType getColor() {
         if (faceUp)
             return type;
         else
@@ -34,5 +34,5 @@ public class Landscape {
 
     public Creature getCreature() {
         return creature;
-    }
+    }    
 }
