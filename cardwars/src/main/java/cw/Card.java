@@ -11,7 +11,8 @@ public abstract class Card {
     private boolean isOwnerPlayer2;
     private CardType type;
     
-    public Card(int manaCost, String name, LandscapeType color, String rulesText, boolean isOwnerPlayer2, CardType type) {
+    public Card(CardName id, int manaCost, String name, LandscapeType color, String rulesText, boolean isOwnerPlayer2, CardType type) {
+        this.id = id;
         this.manaCost = manaCost;
         this.name = name;
         this.color = color;
