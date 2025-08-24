@@ -13,6 +13,7 @@ public class Main {
     static Player currentPlayer, opposingPlayer;
     static Landscape[][] board = new Landscape[2][4];
     static int actions, storm, creatureStorm;
+    static int winner = 0;
 
     private static void play(Card card) {
         if (canPlay(card)) {
@@ -72,28 +73,44 @@ public class Main {
         currentPlayer.draw(5);
         opposingPlayer.draw(5);
 
-        while(true) {
+        while(winner == 0) {
             storm = 0;
             creatureStorm = 0;
             actions = 2;
             currentPlayer.draw();
             
             // Main Phase
+            System.out.print("# ");
             String tokens[] = sc.nextLine().split(" ");
             while(tokens[0] != "attack") {
                 switch(tokens[0]) {
                     case "ls":
                         break;
                     case "draw":
-                        if (actions > 0) {    
+                        if (actions > 0) {
                             currentPlayer.draw();
                         } else {
                             System.out.println("draw: No actions left.");
                         }
+                        break;
+                    case "floop":
+                        //if ()    
+                    break;
                 }
 
+                if (winner != 0) {
+                    break;
+                }
+
+                System.out.print("# ");
                 tokens = sc.nextLine().split(" ");
             }
+            if (winner != 0) {
+                break;
+            }
+
+            // Fight Phase
+
 
             // Switches turns
             isTurnZero = false;
@@ -101,9 +118,15 @@ public class Main {
             currentPlayer = opposingPlayer;
             opposingPlayer = tempPlayer;
             isPlayer2Turn = !isPlayer2Turn;
-
-            break;
         }
+
+        // First XOR used :)
+        if (winner < 0 ^ isPlayer2Turn) {
+            System.out.println("Player 1 Won!");
+        } else {
+            System.out.println("Player 2 Won!");
+        }
+
         sc.close();
     }
 }

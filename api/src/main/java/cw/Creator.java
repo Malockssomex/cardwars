@@ -8,7 +8,7 @@ import java.util.Scanner;
 import cw.pieces.Card;
 import cw.pieces.Creature;
 import cw.types.CardName;
-import cw.types.LandscapeType; 
+import cw.types.LandscapeType;
 
 public class Creator {
     /**
@@ -21,7 +21,9 @@ public class Creator {
             ArrayList<CardName> result = new ArrayList<CardName>();
             Scanner sc = new Scanner(new File("api/src/main/java/cw/decks/" + filename));
             while (sc.hasNextLine()) {
-                result.add(CardName.valueOf(sc.nextLine()));
+                String str = sc.nextLine();
+                System.err.println(str);
+                result.add(CardName.valueOf(str));
             }
             sc.close();
             return result;

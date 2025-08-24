@@ -45,6 +45,10 @@ public class Player {
      * Draws a CardName from the deck into the hand
      */
     public void draw() {
+        if (deck.size() == 0) {
+            Main.winner = -1;
+            return;
+        }
         hand.add(deck.remove(deck.size() - 1));
     }
 
@@ -53,8 +57,9 @@ public class Player {
      * @param n - number of CardNames to draw
      */
     public void draw(int n) {
-        for (int i=0; i<n; i++)
+        for (int i=0; i<n; i++) {
             draw();
+        }
     }
 
     public void printHand() {
