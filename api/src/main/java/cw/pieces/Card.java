@@ -1,35 +1,36 @@
-package cw;
+package cw.pieces;
 
 import cw.types.*;
 
+// Note Cards are only used as Game Objects not as cards in a pile
 public abstract class Card {
     private CardName id;
-    private int manaCost;
+    private int actionCost;
     private String name;
     private LandscapeType color;
     private String rulesText;
     private boolean isOwnerPlayer2;
     
     /**
-     * 
+     *
      * @param id
-     * @param manaCost
+     * @param actionCost
      * @param name
      * @param color
      * @param rulesText
      * @param isOwnerPlayer2
      */
-    public Card(CardName id, int manaCost, String name, LandscapeType color, String rulesText, boolean isOwnerPlayer2) {
+    public Card(CardName id, int actionCost, String name, LandscapeType color, String rulesText, boolean isOwnerPlayer2) {
         this.id = id;
-        this.manaCost = manaCost;
+        this.actionCost = actionCost;
         this.name = name;
         this.color = color;
         this.rulesText = rulesText;
         this.isOwnerPlayer2 = isOwnerPlayer2;
     }
 
-    public int getManaCost() {
-        return manaCost;
+    public int getActionCost() {
+        return actionCost;
     }
 
     public String getName() {

@@ -1,4 +1,4 @@
-package cw;
+package cw.pieces;
 
 import cw.types.*;
 

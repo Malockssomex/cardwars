@@ -1,4 +1,4 @@
-package cw;
+package cw.pieces;
 
 // public class Spell extends Card{
 

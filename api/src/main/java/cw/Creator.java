@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import cw.pieces.Card;
+import cw.pieces.Creature;
 import cw.types.CardName;
 import cw.types.LandscapeType; 
 
@@ -16,7 +19,7 @@ public class Creator {
     public static ArrayList<CardName> getDeck(String filename) {
         try {
             ArrayList<CardName> result = new ArrayList<CardName>();
-            Scanner sc = new Scanner(new File("cardwars\\src\\main\\java\\cw\\decks\\" + filename));
+            Scanner sc = new Scanner(new File("api/src/main/java/cw/decks/" + filename));
             while (sc.hasNextLine()) {
                 result.add(CardName.valueOf(sc.nextLine()));
             }
@@ -28,10 +31,13 @@ public class Creator {
         }
     }
     
+    // Returns Card object using CardName
     public static Card getCard(CardName name, boolean isOwnerPlayer2) {
-        if (name == CardName.PHYLLIS)
-            return (Card)(new Creature(name, 1, "Phyllis", LandscapeType.RAINBOW,  "", isOwnerPlayer2, 2, 7));
-        else
-            return (Card)(new Creature(name, 1, "Pen", LandscapeType.RAINBOW,  "", isOwnerPlayer2, 2, 7));
+        switch(name) {
+            case PHYLLIS:
+                return (Card)(new Creature(name, 1, "Phyllis", LandscapeType.RAINBOW,  "", isOwnerPlayer2, 2, 7));
+            default:
+                return (Card)(new Creature(name, 1, "Pen", LandscapeType.RAINBOW,  "", isOwnerPlayer2, 2, 7));
+        }
     }
 }

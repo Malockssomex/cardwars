@@ -1,4 +1,4 @@
-package cw;
+package cw.pieces;
 
 import cw.types.LandscapeType;
 //import java.util.ArrayList;
@@ -34,5 +34,5 @@ public class Landscape {
 
     public Creature getCreature() {
         return creature;
-    }    
+    }
 }

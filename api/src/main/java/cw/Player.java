@@ -1,18 +1,21 @@
 package cw;
 
 import java.util.Random;
+
 import cw.types.CardName;
 import java.util.ArrayList;
 
 public class Player {
     private int health;
-    ArrayList<CardName> deck = new ArrayList<CardName>();
-    ArrayList<CardName> hand = new ArrayList<CardName>();
-    ArrayList<CardName> yard = new ArrayList<CardName>();
+    private ArrayList<CardName> deck = new ArrayList<CardName>();
+    private ArrayList<CardName> hand = new ArrayList<CardName>();
+    private ArrayList<CardName> yard = new ArrayList<CardName>();
     
     public Player(ArrayList<CardName> deck) {
         health = 25;
         this.deck = deck;
+        hand = new ArrayList<CardName>();
+        yard = new ArrayList<CardName>();
     }
 
     public int getHealth() {
@@ -52,5 +55,9 @@ public class Player {
     public void draw(int n) {
         for (int i=0; i<n; i++)
             draw();
+    }
+
+    public void printHand() {
+        
     }
 }
